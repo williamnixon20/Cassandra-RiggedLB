@@ -3,6 +3,7 @@ Made a custom implementation of Cassandra Datastax driver's load balancer, that 
 
 # Implementation
 The default LB takes into account several factors to pick nodes to prioritize as coordinators (contact point), either through the distance or through detecting where the data is stored at through tokens (token aware).
+
 The custom LB (Fake Load Balancing a.k.a FLB) aims to only ever pick 1 node amongst the list of alive nodes instead of distributing the requests across several nodes. It does so by sorting the nodes by their hash code and returning the node with the lowest hash code.
 
 # How to run
